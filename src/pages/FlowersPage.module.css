@@ -1,0 +1,127 @@
+.page {
+  min-height: 100vh;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.inner {
+  width: 100%;
+  max-width: 780px; /* وسط بين القديم (640) واللي فرشنا بيه (950) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashedTop, .dashedBottom {
+  width: 100%;
+  border-top: 2px dashed var(--red-pale);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.poemCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.poemBox {
+  background: #ffbbc0;
+  border: 1px solid color-mix(in srgb, var(--red-pale) 50%, transparent);
+  border-radius: 20px; 
+  padding: 0.6rem 1.2rem; 
+  font-family: var(--font-body), 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 0.95rem; 
+  font-weight: 500; 
+  color: var(--text-light);
+  line-height: 1.6; 
+  text-align: center;
+  
+  width: 100%;
+  min-height: 90px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  
+  /* السطر السحري عشان الـ \n تشتغل */
+  white-space: pre-line;
+}
+
+.flowerCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.flowerEmoji { 
+  display: flex; 
+}
+
+.flowerName {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.08em;
+}
+
+.flowerSub {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--font-hand);
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+  color: var(--red);
+  font-weight: 700;
+  transform: rotate(-1.5deg);
+  display: inline-block;
+}
+
+/* Mobile: stack columns */
+@media (max-width: 480px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    gap: 1.5rem; /* وسعنا المسافة بين الوردة والمسدجات */
+  }
+  
+  .poemCol {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 95%; /* بدل 300px عشان تاخد راحتها على الشاشة كلها */
+    gap: 0.8rem;
+  }
+  
+  .poemBox { 
+    font-size: 0.85rem; /* كبرنا الخط على الموبايل بدل 0.58 اللي كان صغير جداً */
+    padding: 0.5rem 1rem; 
+  }
+}

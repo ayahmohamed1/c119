@@ -1,0 +1,150 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.inner {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashedTop, .dashedBottom {
+  width: 100%;
+  border-top: 2px dashed var(--primary-light);
+}
+
+/* حاوية الصور مع شريط التمرير */
+.strip {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding: 1.5rem 0.5rem 1rem 0.5rem;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.strip:active { 
+  cursor: grabbing; 
+}
+
+/* تصميم شريط التمرير (Scrollbar) اللي تحت الصور */
+.strip::-webkit-scrollbar {
+  height: 8px; /* سمك الشريط */
+}
+
+.strip::-webkit-scrollbar-track {
+  background: rgba(169, 188, 216, 0.2); /* خلفية الشريط بلون أزرق فاتح خفيف */
+  border-radius: 4px;
+}
+
+.strip::-webkit-scrollbar-thumb {
+  background: var(--primary-light); /* لون الجزء المتحرك من الشريط */
+  border-radius: 4px;
+}
+
+.strip::-webkit-scrollbar-thumb:hover {
+  background: var(--primary); /* لون الشريط لما الماوس ييجي عليه */
+}
+
+/* شكل الـ Polaroid (الصور) */
+.polaroid {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  background: white;
+  padding: 6px 6px 12px;
+  box-shadow: 0 4px 14px rgba(27, 42, 74, 0.15);
+  border-radius: 2px;
+  width: clamp(130px, 30vw, 160px);
+  position: relative;
+  rotate: var(--tilt);
+  transition: box-shadow 0.2s;
+}
+
+.polaroid:hover { 
+  box-shadow: 0 8px 24px rgba(27, 42, 74, 0.25); 
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  background: #eee;
+}
+
+.placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f0f0;
+  font-size: 2rem;
+}
+
+.tag {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-hand);
+  font-size: 0.75rem;
+  color: var(--primary);
+  background: var(--paper);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--font-hand);
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+  color: var(--primary);
+  font-weight: 700;
+  transform: rotate(-1.5deg);
+  display: inline-block;
+}
+/* الخطوط المقطعة العلوية والسفلية باللون الأزرق الهادئ */
+.dashedTop, .dashedBottom {
+  width: 100%;
+  border-top: 2px dashed var(--primary-light);
+}
+
+/* زر RETURN بدائرة محيطة وحواف دائرية أنيقة باللون الأزرق */
+.returnBtn, :global(.btn-return), button[class*="return"] {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--primary);
+  background: transparent;
+  border: 2px solid var(--primary);
+  padding: 0.5rem 2rem;
+  border-radius: 30px; /* بيعمل شكل الدائرة/الكبسولة حوالين الكلمة */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.returnBtn:hover, :global(.btn-return):hover, button[class*="return"]:hover {
+  background: var(--primary);
+  color: #fff;
+}

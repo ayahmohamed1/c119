@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fdfbf7;
+  --paper: #fdfbf7;
+  --primary: #1b2a4a;
+  --primary-light: #a9bcd8;
+  --primary-hover: #c9d3e6;
+  --text: #1b2a4a;
+  --text-light: #2c3f66;
+  --font-hand: 'Dancing Script', cursive;
+  --font-body: 'Playfair Display', Georgia, serif;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+.polaroid-frame {
+  @apply bg-white p-2 pb-6 rounded-sm shadow-xl;
+}

@@ -1,0 +1,307 @@
+.page {
+  min-height: 100vh;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem 2rem;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.cardContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* الأسطوانة الخلفية البارزة من أعلى الكارت وتدور مع تشغيل الأغنية */
+.vinylPeeking {
+  position: absolute;
+  top: -28px;
+  left: -14px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2d3748 18%, #1a202c 22%, #2d3748 24%, #111827 40%, #2d3748 42%, #0f172a 68%);
+  border: 1.5px solid #334155;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.vinylGrooves {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle, transparent, transparent 4px, rgba(255, 255, 255, 0.04) 5px, transparent 6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vinylCenterLabel {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.vinylStar {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+/* كارت المشغل الأبيض الرئيسي الأنيق */
+.playerCard {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 1.15rem 1.25rem 1.5rem;
+  box-shadow: 0 18px 45px rgba(27, 42, 74, 0.12), 0 4px 12px rgba(27, 42, 74, 0.05);
+  border: 1px solid rgba(169, 188, 216, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* مكان الصورة المخصص المربع */
+.coverBox {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #eef3f9;
+  position: relative;
+  box-shadow: inset 0 2px 6px rgba(27, 42, 74, 0.05);
+  border: 1.5px solid rgba(169, 188, 216, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* تفاصيل اسم الأغنية والعبارة */
+.songDetails {
+  text-align: left;
+  padding: 0 0.2rem;
+}
+
+.songTitle {
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.artistName {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: #627594;
+  margin-top: 0.25rem;
+  font-weight: 400;
+}
+
+/* شريط التقدم والوقت */
+.timelineSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.progressBarWrapper {
+  width: 100%;
+  height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.progressBar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition: height 0.15s ease;
+}
+
+.progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 2px 6px rgba(27, 42, 74, 0.35);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.progressBar:hover::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+
+.progressBar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: none;
+  box-shadow: 0 2px 6px rgba(27, 42, 74, 0.35);
+  cursor: pointer;
+}
+
+.timeRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #8fa1b8;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  padding: 0 0.1rem;
+}
+
+/* أزرار التحكم بالتشغيل */
+.controlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 0.2rem;
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.secondaryBtn:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
+
+.playButton {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(27, 42, 74, 0.28);
+  transition: box-shadow 0.2s ease;
+}
+
+.playButton:hover {
+  box-shadow: 0 10px 26px rgba(27, 42, 74, 0.35);
+}
+
+/* شريط الصوت */
+.volumeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 85%;
+  margin: 0.5rem auto 0;
+}
+
+.volIcon {
+  color: #8fa1b8;
+  flex-shrink: 0;
+}
+
+.volumeBar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.volumeBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.volumeBar::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: none;
+  cursor: pointer;
+}
+
+/* زر العودة للمنيو */
+.returnWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.returnBtn {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  padding: 0.5rem 2.2rem;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.returnBtn:hover {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(27, 42, 74, 0.15);
+}
