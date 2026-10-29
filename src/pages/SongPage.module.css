@@ -9,7 +9,7 @@
 
 .wrapper {
   width: 100%;
-  max-width: 350px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,7 +88,7 @@
 /* مكان الصورة المخصص المربع */
 .coverBox {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 16 / 9;
   border-radius: 20px;
   overflow: hidden;
   background: #eef3f9;
@@ -104,6 +104,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 

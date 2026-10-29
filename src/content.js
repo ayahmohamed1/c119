@@ -15,8 +15,8 @@ const content = {
   song: {
     audioSrc: "/music/music.mp3",
     coverImage: "/images/placeholder-3.jpg", // 👈 تقدري تحطي مسار صورتك هنا (مثلاً /images/your-photo.jpg)
-    songTitle: "Our Song",
-    artist: "every word for you",
+    songTitle: "I dedicate this song to you🤍",
+    artist: "I love you",
     title: "our song",
     returnButton: "RETURN"
   },
